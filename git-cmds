@@ -1,0 +1,164 @@
+git config user.name
+git config user.email
+$output = shell_exec('git clone https://username:password@gitlab.com/deepakkoirala/adfadsf.git');
+git clone https://dkoiral1@codehub.adsfdf.com/ui-development/adfasdf.git
+git checkout -b deep //create branch and checkout commands
+git add .
+git add -A
+git commmit -m "search func"
+git commit -a -m "test"
+git push origin deep //git push -u origin master //Pushing commits Remotely
+---------------
+git fetch origin master:master //deep basera master update
+git merge master // deep ma basera
+
+git checkout -- filename
+git reset ---hard /// remove all changes bgireko and copy all -- last commmit
+git reset --hard 4a155e5
+git revert 5719fd3d2
+git push -f
+
+git clean -df
+//Remove untracked directory and files/unzip mistake
+git clean -xdf
+//Remove untracked files from the current directory as well as any files that Git usually ignores.
+
+git rm file1.txt //use this  git rm --cached file1.txt //if directory -r use #thisworking But if you want to remove the file only from the Git repository and not remove it from the filesystem, use: 
+git commit -m "remove file1.txt" 
+git pull
+
+git diff --color Branchname
+
+git show 0fc3ae7
+
+git reflog //see all changes
+
+git reset HEAD~2
+
+git merge master :wq
+
+git commit --amend last commit edit
+git commit --amend -m "New and correct message"
+$ git add another/changed/file.txt
+$ git commit --amend -m "message"
+
+$ git cherry-pick d4d8e7c //pick a commit
+to merge with commit
+
+git log master..testa //compare with master with branch
+
+git revert -n 98c4fc 60efe5d //reverting all the commits
+$ git revert -n HEAD~1^..HEAD //two last
+git revert -n 98c4fc^..60efe5d //in row
+
+git config --global alias.ac '!git add -A && git commit'
+git ac -m "message"
+
+git config --global alias.name 'log --author'
+git name "Deep"
+-------------------------------------------------------------------------------
+git merge master // to merge with master on local
+
+git checkout -b shopping_cart //switched to a new branch shopping_cart
+
+git push origin shopping_cart // pushing to remote
+
+git branch //show current branch
+
+git branch -r //list all remote branches
+
+git checkout shopping_cart //to go to shopping cart
+
+git push //pushing to remote
+
+git remote show origin //showing remote branches  important command
+
+git push origin :shopping_cart // delete remote branch
+
+git branch -d shopping_cart // delete locally. -D
+
+git fetch / pulls all branche
+
+-----------------------------------------------------------------------------
+git stash //saving it to stash without msg default
+git stash list
+git stash pop //resumes the last saved stash and delete.. apply and delete
+git stash drop //to drop the stash
+git stash save "my save" //save it into stash
+git stash show 1 // stash show -u 0. to see texts
+git stash drop 1
+git stash pop 1
+git stash apply //only apply
+git stash clear //too clear all the stashes
+git stash branch <branchname> [<stash>]
+
+git stash -u (stash your untracked files:)
+git stash -a (can include changes to ignored files as well by passing the -a option )
+
+-------------------------------------------------------------------------------
+Step 1:
+Checkout the branch where you want to create the tag
+git checkout "branch name"
+example : git checkout master
+________________________________________________________
+
+Step 2:
+Create tag with some name
+git tag "tag name"
+example : git tag v1.0
+git tag -a v1.0 -m "ver 1 of .." (to create annotated tags) 
+________________________________________________________
+
+Step 3:
+Display or Show tags
+git tag
+git show v1.0
+git tag -l “v1.*”
+________________________________________________________
+
+Step 4:
+Push tags to remote
+git push origin v1.0
+git push origin --tags
+git push --tags 
+(to push all tags at once)
+________________________________________________________
+
+Step 5:
+Delete tags (if required only)
+to delete tags from local :
+git tag -d v1.0
+git tag --delete v1.0
+
+to delete tags from remote :
+git push origin -d v1.0
+git push origin --delete v1.0
+git push origin :v1.0
+
+to delete multiple tags at once:
+git tag -d v1.0 v1.1 (local)
+git push origin -d v1.0 v1.1 (remote)
+
+________________________________________________________
+
+
+Checking out TAGS
+
+We cannot checkout tags in git
+We can create a branch from a tag and checkout the branch
+git checkout -b "branch name" "tag name"
+example : git checkout -b ReleaseVer1 v1.0
+________________________________________________________
+
+Creating TAGS from past commits
+
+git tag "tag name" "reference of commit"
+example : git tag v1.2 5fcdb03
+
+-----------------------------------------------
+git filter-branch --env-filter \
+    'if [ $GIT_COMMIT = 98759cc4e45a0631a31fc5bc5233e4d719ee85c8 ]
+     then
+         export GIT_AUTHOR_DATE="Wed Sep 5 06:15:10 2012 +0545"
+         export GIT_COMMITTER_DATE="Wed Sep 5 06:15:10 2012 +0545"
+     fi'
