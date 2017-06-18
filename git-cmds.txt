@@ -1,3 +1,4 @@
+git config --global user.name "test"
 git config user.name
 git config user.email
 $output = shell_exec('git clone https://username:password@gitlab.com/deepakkoirala/adfadsf.git');
