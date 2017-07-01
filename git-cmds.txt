@@ -3,6 +3,7 @@ git config user.name
 git config user.email
 $output = shell_exec('git clone https://username:password@gitlab.com/deepakkoirala/adfadsf.git');
 git clone https://dkoiral1@codehub.adsfdf.com/ui-development/adfasdf.git
+git clone --depth 1 https://github.com/deepakkoirala/git-commands.git 
 git checkout -b deep //create branch and checkout commands
 git add .
 git add -A
