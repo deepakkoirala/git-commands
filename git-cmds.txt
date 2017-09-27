@@ -165,3 +165,11 @@ git filter-branch --env-filter \
          export GIT_AUTHOR_DATE="Wed Sep 5 06:15:10 2012 +0545"
          export GIT_COMMITTER_DATE="Wed Sep 5 06:15:10 2012 +0545"
      fi'
+     
+merging repos:
+
+cd path/to/project-b
+git remote add project-a path/to/project-a
+git fetch project-a
+git merge --allow-unrelated-histories project-a/master # or whichever branch you want to merge
+git remote remove project-a
