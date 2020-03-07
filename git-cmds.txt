@@ -179,3 +179,4 @@ git remote remove project-a
 sub modules
 
 git submodule update --init ./frontend2 //to update local with remote
+git submodule update --remote --recursive //update all modules
