@@ -1,0 +1,13 @@
+One time command
+git submodule add https://angular.git apps/exec --branch dev2.15
+
+
+1. Clone entire code (root + child apps)
+git clone --recursive --branch dev1.0 https://common.git
+
+2. git submodule update --recursive / git submodule update
+
+3. Just cloning particular app, clone the main app first and use this git submodule update --init apps/sights
+
+
+git submodule add https://ights.git apps/hts --branch master
